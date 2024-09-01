@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "openapi-client-builder"
-version = "0.1.0"
+version = "0.1.1"
 description = ""
 authors = ["AnsonCar <anson1tsang@gmail.com>"]
 readme = "README.md"
