@@ -1,5 +1,9 @@
 # openapi_client_builder
 
+A tool that automatically generates client-side APIs based on the OpenAPI specification. Simplify the process of interacting with APIs by creating client libraries from OpenAPI definitions, enabling seamless integration and communication with backend services. 
+
+> The tool generates TypeScript request files and currently supports Nuxt framework, with plans to extend support to SvelteKit in the future.
+
 **Usage**:
 
 ```console
