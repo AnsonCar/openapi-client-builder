@@ -47,8 +47,7 @@ export function getHeaders() {
 
 temp_schemas = """
 type %s = {
-%s
-}
+%s}
 """
 
 temp_api = """
