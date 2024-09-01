@@ -47,7 +47,7 @@ def server2client(data_paths: dict) -> str:
             # responses type
             if api_data['responses']['200'].get('content'):
                 schema = api_data['responses']['200']['content']['application/json']['schema']
-                api_responses =['$ref'].split('/')[-1] if schema.get('$ref') else ''
+                api_responses = schema['$ref'].split('/')[-1] if schema.get('$ref') else ''
                 # for typescript
                 api_name += f': Promise<{api_responses}>' if len(api_responses) > 0 else ''
             # download file use apiFile fucntion (use path name to check)
