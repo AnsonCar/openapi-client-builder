@@ -15,8 +15,7 @@ def get_openapi_json(url_or_path: str):
         print("Error during request:\n", e)
 
 
-def output_file(name: str, data: str | dict):
-    output_dir = './dist/'
+def output_file(name: str, data: str | dict, output_dir:str='./dist/'):
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
     if (isinstance(data, dict)):
