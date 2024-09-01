@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "openapi-client-builder"
 version = "0.1.1"
-description = ""
+description = "A tool that automatically generates client-side APIs based on the OpenAPI specification. Simplify the process of interacting with APIs by creating client libraries from OpenAPI definitions, enabling seamless integration and communication with backend services."
 authors = ["AnsonCar <anson1tsang@gmail.com>"]
 readme = "README.md"
 

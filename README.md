@@ -1,4 +1,4 @@
-# `openapi-client-builder`
+# openapi_client_builder
 
 **Usage**:
 
