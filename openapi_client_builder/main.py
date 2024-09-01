@@ -15,4 +15,4 @@ def api(host:str='127.0.0.1',port:str='8000',path='/api/openapi.json', url=None,
     data_dict = get_openapi_json(url if url else f'http://{host}:{port}{path}')
     data_paths = data_dict['paths']
     _api = server2client(data_paths)
-    output_file('db_api.ts', _api)
+    output_file(name, _api)
