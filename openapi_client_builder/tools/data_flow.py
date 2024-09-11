@@ -4,7 +4,8 @@ import requests
 
 
 def get_openapi_json(url_or_path: str) -> dict | None:
-    """Fetches and returns OpenAPI JSON data.
+    """
+    Fetches and returns OpenAPI JSON data.
 
     Args:
         url_or_path (str): The URL to fetch the OpenAPI JSON data from.
@@ -30,7 +31,8 @@ def get_openapi_json(url_or_path: str) -> dict | None:
 def output_file(
     name: str, data: str | dict, output_dir: str = "./dist"
 ) -> None:  # noqa
-    """Writes data to a file in the specified output directory.
+    """
+    Writes data to a file in the specified output directory.
 
     Args:
         name (str): The name of the output file.
