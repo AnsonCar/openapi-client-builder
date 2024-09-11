@@ -27,7 +27,9 @@ def get_openapi_json(url_or_path: str) -> dict | None:
         print("Error during request:\n", e)
 
 
-def output_file(name: str, data: str | dict, output_dir: str = "./dist"):
+def output_file(
+    name: str, data: str | dict, output_dir: str = "./dist"
+) -> None:  # noqa
     """Writes data to a file in the specified output directory.
 
     Args:
@@ -37,10 +39,13 @@ def output_file(name: str, data: str | dict, output_dir: str = "./dist"):
         output_dir (str, optional): The output directory where
                                     the file will be created.
                                     Defaults to "./dist/".
+                           €
     """
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
+
     if isinstance(data, dict):
         data = json.dumps(data, indent=4, ensure_ascii=False)
+
     with open(f"{output_dir}/{name}", "w", encoding="utf-8") as f:
         f.write(data)
