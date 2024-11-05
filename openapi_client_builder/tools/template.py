@@ -37,10 +37,11 @@ export async function apiFile(url: string, options: RequestInit | undefined) {
 }
 
 export function getHeaders() {
+  const authStore = useAuthStore()
   return {
     Accept: "application/json",
     "Content-Type": "application/json",
-    Authorization: `Bearer ${useCookie("token")}`,
+    Authorization: `Bearer ${authStore.token}`,
   };
 }
 """

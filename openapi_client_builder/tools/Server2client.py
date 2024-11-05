@@ -90,9 +90,9 @@ def server2client(data_paths: dict) -> str:
             if api_data.get("requestBody"):
                 api_schemas = api_data["requestBody"]["content"]
                 if (api_schemas.get("application/json")):
-                    api_schemas["application/json"]["schema"]["$ref"].split("/")[-1]
+                    api_schemas = api_schemas["application/json"]["schema"]["$ref"].split("/")[-1]
                 elif (api_schemas.get("multipart/form-data")):
-                    api_schemas["multipart/form-data"]["schema"]["properties"]
+                    api_schemas = api_schemas["multipart/form-data"]["schema"]["properties"]
                     if (api_schemas.get("files")):
                         api_schemas = api_schemas.get("files")
                     elif (api_schemas.get("file")):
