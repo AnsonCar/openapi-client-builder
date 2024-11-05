@@ -36,7 +36,7 @@ def api(
     path="/api/openapi.json",
     url=None,
     output: str = "./dist",
-    name="db_api.d.ts",
+    name="dbApi.ts",
 ):
     data_dict = get_openapi_json(url if url else f"http://{host}:{port}{path}")
     data_paths = data_dict["paths"]
