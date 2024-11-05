@@ -88,9 +88,15 @@ def server2client(data_paths: dict) -> str:
                 else ""
             )
             if api_data.get("requestBody"):
-                api_schemas = api_data["requestBody"]["content"]["application/json"][
-                    "schema"
-                ]["$ref"].split("/")[-1]
+                api_schemas = api_data["requestBody"]["content"]
+                if (api_schemas.get("application/json")):
+                    api_schemas["application/json"]["schema"]["$ref"].split("/")[-1]
+                elif (api_schemas.get("multipart/form-data")):
+                    api_schemas["multipart/form-data"]["schema"]["properties"]
+                    if (api_schemas.get("files")):
+                        api_schemas = api_schemas.get("files")
+                    elif (api_schemas.get("file")):
+                        api_schemas = api_schemas.get("file")
                 api_body = (
                     "\n\t\tbody: JSON.stringify(data)" if len(api_schemas) != 0 else ""
                 )
@@ -101,9 +107,7 @@ def server2client(data_paths: dict) -> str:
 
             # responses type
             if api_data["responses"]["200"].get("content"):
-                schema = api_data["responses"]["200"]["content"]["application/json"][
-                    "schema"
-                ]
+                schema = api_data["responses"]["200"]["content"]["application/json"]["schema"]
                 api_responses = (
                     schema["$ref"].split("/")[-1] if schema.get("$ref") else ""
                 )
