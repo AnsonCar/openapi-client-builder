@@ -1,8 +1,4 @@
-# openapi_client_builder
-
-A tool that automatically generates client-side APIs based on the OpenAPI specification. Simplify the process of interacting with APIs by creating client libraries from OpenAPI definitions, enabling seamless integration and communication with backend services. 
-
-> The tool generates TypeScript request files and currently supports Nuxt framework, with plans to extend support to SvelteKit in the future.
+# `api-cli`
 
 **Usage**:
 
@@ -19,7 +15,7 @@ $ api-cli [OPTIONS] COMMAND [ARGS]...
 **Commands**:
 
 * `api`
-* `type`
+* `type`: Gen api type file
 
 ## `api-cli api`
 
@@ -36,10 +32,20 @@ $ api-cli api [OPTIONS]
 * `--path TEXT`: [default: /api/openapi.json]
 * `--url TEXT`
 * `--output TEXT`: [default: ./dist]
-* `--name TEXT`: [default: db_api.d.ts]
+* `--name TEXT`: [default: dbApi.ts]
 * `--help`: Show this message and exit.
 
 ## `api-cli type`
+
+Gen api type file
+
+Args:
+    host (str, optional): api server ip. Defaults to "127.0.0.1".
+    port (str, optional): api server port. Defaults to "8000".
+    path (str, optional): api server openapi.json path. Defaults to "/api/openapi.json".
+    url (_type_, optional): api server ip:port. Defaults to None.
+    output (str, optional): gen file out path. Defaults to "./dist".
+    name (str, optional): _description_. Defaults to "api.types.d.ts".
 
 **Usage**:
 
